@@ -3,4 +3,4 @@
 ./Ark02/ShooterGame/Binaries/Linux/ShooterGameServer "$2?listen?ServerAdminPassword=$4?Port=$6?MaxPlayers=$8RCONEnabled=True?RCONPort=27021" -ClusterDirOverride=/home/container/Arkcluster -clusterid=$9 &
 ./Ark03/ShooterGame/Binaries/Linux/ShooterGameServer "$3?listen?ServerAdminPassword=$4?Port=$7?MaxPlayers=$8RCONEnabled=True?RCONPort=27022" -ClusterDirOverride=/home/container/Arkcluster -clusterid=$9 &
 
-echo 'Server Started this may take a while until the server run.
+echo 'Server Started this may take a while until the server run.'
