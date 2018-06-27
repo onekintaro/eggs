@@ -17,6 +17,7 @@ port2=27022
 # wait 15s
 sleep 15;
 
-screen -X -S ark1 quit
-screen -X -S ark2 quit
-screen -X -S ark3 quit
+# rcon quit
+/usr/bin/rcon -P$1 -a${host} -p${port1} 'DoExit'
+/usr/bin/rcon -P$1 -a${host} -p${port2} 'DoExit'
+/usr/bin/rcon -P$1 -a${host} -p${port3} 'DoExit'
