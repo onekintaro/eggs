@@ -3,11 +3,12 @@
 /home/container/Ark02/ShooterGame/Binaries/Linux/ShooterGameServer "$2?listen?ServerAdminPassword=$4?Port=$6?MaxPlayers=$8?QueryPort=27016?RCONEnabled=True?RCONPort=27021" -ClusterDirOverride=/home/container/Arkcluster -clusterid=$9 & \
 /home/container/Ark03/ShooterGame/Binaries/Linux/ShooterGameServer "$3?listen?ServerAdminPassword=$4?Port=$7?MaxPlayers=$8?QueryPort=27017?RCONEnabled=True?RCONPort=27022" -ClusterDirOverride=/home/container/Arkcluster -clusterid=$9 &
 
-echo 'Server Started this may take a while until the server run.'
+
 
 while true; do
 
     # readinput
+    echo 'Server Started this may take a while until the server run.'
     read -p 'server:' server
 
     # Exit the loop if ping is no longer dropping packets
