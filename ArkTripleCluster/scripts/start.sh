@@ -1,7 +1,7 @@
 #!/bin/bash
 /home/container/Ark01/ShooterGame/Binaries/Linux/ShooterGameServer "$1?listen?ServerAdminPassword=$4?Port=$5?MaxPlayers=$8?QueryPort=27015?RCONEnabled=True?RCONPort=27020" -ClusterDirOverride=/home/container/Arkcluster -clusterid=$9 & \
-/home/container/Ark02/ShooterGame/Binaries/Linux/ShooterGameServer "$2?listen?ServerAdminPassword=$4?Port=$6?MaxPlayers=$8?QueryPort=27016?RCONEnabled=True?RCONPort=27021" -ClusterDirOverride=/home/container/Arkcluster -clusterid=$9 & \
-/home/container/Ark03/ShooterGame/Binaries/Linux/ShooterGameServer "$3?listen?ServerAdminPassword=$4?Port=$7?MaxPlayers=$8?QueryPort=27017?RCONEnabled=True?RCONPort=27022" -ClusterDirOverride=/home/container/Arkcluster -clusterid=$9 &
+/home/container/Ark02/ShooterGame/Binaries/Linux/ShooterGameServer "$2?listen?ServerAdminPassword=$4?Port=$6?MaxPlayers=$8?QueryPort=27017?RCONEnabled=True?RCONPort=27021" -ClusterDirOverride=/home/container/Arkcluster -clusterid=$9 & \
+/home/container/Ark03/ShooterGame/Binaries/Linux/ShooterGameServer "$3?listen?ServerAdminPassword=$4?Port=$7?MaxPlayers=$8?QueryPort=27019?RCONEnabled=True?RCONPort=27022" -ClusterDirOverride=/home/container/Arkcluster -clusterid=$9 &
 
 
 
@@ -12,7 +12,7 @@ while true; do
     read -p 'server:' server
 
     # Exit the loop if ping is no longer dropping packets
-    if [ "$server" == "quit" ]; then
+    if [ "$server" == "stop" ]; then
         echo "Save and Stopping Server"
         host='127.0.0.1'
         port1=27020
@@ -21,20 +21,18 @@ while true; do
         
         # rcon broadcast message
         /usr/bin/rcon -P$4 -a${host} -p${port1} 'broadcast This server is going offline in 15 seconds, the world is saving now, any changes made beyond this point will be lost.'
-        /usr/bin/rcon -P$4 -a${host} -p${port2} 'broadcast This server is going offline in 15 seconds, the world is saving now, any changes made beyond this point will be lost.'
-        /usr/bin/rcon -P$4 -a${host} -p${port3} 'broadcast This server is going offline in 15 seconds, the world is saving now, any changes made beyond this point will be lost.'
-        
-        # rcon saveworld
-        /usr/bin/rcon -P$4 -a${host} -p${port1} 'saveworld'
-        /usr/bin/rcon -P$4 -a${host} -p${port2} 'saveworld'
-        /usr/bin/rcon -P$4 -a${host} -p${port3} 'saveworld'
-        
-        # wait 15s
         sleep 15;
-        
-        # rcon quit
+        /usr/bin/rcon -P$4 -a${host} -p${port1} 'saveworld'
         /usr/bin/rcon -P$4 -a${host} -p${port1} 'DoExit'
+        
+        /usr/bin/rcon -P$4 -a${host} -p${port2} 'broadcast This server is going offline in 15 seconds, the world is saving now, any changes made beyond this point will be lost.'
+        sleep 15;
+        /usr/bin/rcon -P$4 -a${host} -p${port2} 'saveworld'
         /usr/bin/rcon -P$4 -a${host} -p${port2} 'DoExit'
+        
+        /usr/bin/rcon -P$4 -a${host} -p${port3} 'broadcast This server is going offline in 15 seconds, the world is saving now, any changes made beyond this point will be lost.'
+        sleep 15;
+        /usr/bin/rcon -P$4 -a${host} -p${port3} 'saveworld'
         /usr/bin/rcon -P$4 -a${host} -p${port3} 'DoExit'
         
         echo "Server Stopped"
