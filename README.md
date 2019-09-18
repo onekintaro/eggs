@@ -2,106 +2,107 @@
 
 I am working on adding a large collection of public eggs for the Pterodactyl community.
 
-With that I am also accepting PR's for new service and also updates to the current ones.
+With that I am also accepting PR's for new services and also updates to the current ones.
 
 If you are submitting PR's try and keep names and titles the same.
 
+## How to import an egg
 
-## Please read the HOWTO.md before submitting PRs
+If you are reading this it looks like you are looking to add an egg to your server.
+
+1. Download any of the json files located in the folders below. 
+   1. It's easiest to right click the `raw` button and save as.
+2. In your panel go to the `Nests` section in the admin part of the panel
+3. Click the green `Import Egg` button
+4. Browse to the json file you saved earlier
+5. Select what nest you want to put the egg in.
+   1. If you want a new nest you need to create it before importing the egg.
+6. Restart the daemon on your node before creating a server using the new egg(s).
+
+# You must restart your daemon after importing an egg
 
 
-#### Please read the HOWTO.md as it container important information.
+## Please read the CONTRIBUTING.md before submitting PRs
+
+## Bot Eggs
+
+[Discord](/bots/discord/)   
+* [ATL Bot](/bots/discord/atlbot/) Node JS
+* [Bastion](/bots/discord/bastion/)  
+* [discord.js](bots/discord/discord.js/) Node JS generic  
+* [fragbot](/bots/discord/fragbot/) Golang  
+* [jmusicbot](/bots/discord/jmusicbot) Java
+* [parkertron](/bots/discord/parkertron/) Golang  
+* [pixel-bot](/bots/discord/pixelbot/) Python  
+* [Sinusbot](/bots/discord/sinusbot/)  
+
+[TeamSpeak3](bots/teamspeak3)
+* [JTS3ServerMod](/bots/teamspeak3/jts3servermod/)
 
 ## Game Eggs
 
-### GTA
-#### GTA V
+[Arma](/arma/)  
+* [Arma 3](/arma/arma3/)  
+* [Arma 3 HC](/arma/arma3_headless_client/)  
 
-#### FiveM 
-The [FiveM](https://fivem.net/) GTA 5 dedicated server
-- Only installs latest version versions are no selectable.
+[Conan Exiles](/conan_exiles/conan_exiles)
 
-#### Rage-MP
-The [Rage-MP](https://rage.mp/) GTA 5 dedicated server
+[Don't Starve](/dont_starve/dont_starve)
 
-#### San Andreas
+[ET Legacy](/enemy_territory/etlegacy/)
 
-#### SA:MP
-The [SA:MP](https://www.sa-mp.com/) GTA San Andreas dedicated server
+[Factorio](/factorio/factorio/)  
 
-### Factorio
-#### factorio
-The [Factorio](https://factorio.com/) dedicated server
+[Grand Theft Auto](/gta/)  
+* GTA V
+  * [FiveM](/gta/fivem/)  
+  * [RageMP](/gta/ragemp/)  
+* GTA SA
+  * [Multi Theft Auto](/gta/mtasa/)
+  * [SA-MP](/gta/samp/)
 
-### Terraria
-#### tShock
-The [tShock](https://tshock.co) modded server.
-- This requires a minimum of 1g (1024m) to actually create a map. This will get OOM if you have less.
+[Minecraft Bedrock](/minecraft_bedrock/)  
+* [Bedrock](/minecraft_bedrock/bedrock/)  
+* [Nukkit](/minecraft_bedrock/nukkit/)  
+* [PocketMine MP](/minecraft_bedrock/pocketmine_mp/)  
 
-### Minecraft
-#### Spigot Enhanced
-This is a direct fork of the default spigot service with the added benefit of being able to build the spigot jar.  
-- (It's noted that building the jar is intensive and time consuming)
+[Minecraft Java](/minecraft_java/)
+* [Forge](/minecraft_java/forge/)  
+* [Feed The Beast](/minecraft_java/ftb/)  
+* [Spigot](/minecraft_java/spigot/)
+* [Paper](/minecraft_java/paper)
+* [Technic](/minecraft_java/technic/)  
+* [VanillaCord](/minecraft_java/vanillacord/)
 
-#### Forge Enhanced
-This is a direct fork of the default forge service
-- Has a version detection fix for "latest"
+[Minecraft Proxies](/minecraft_proxy/) (these are for the java version of minecraft)  
+* [Waterfall](/minecraft_proxy/waterfall/)  
+* [TyphoonLimbo](/minecraft_proxy/typhoonlimbo/)
+* [Velocity](/minecraft_proxy/velocity/)
 
-#### FTB Packs
-##### Feed The Beast - generic
-[FTB](https://www.feed-the-beast.com/modpacks)
-Generic egg to handle any standard FTB modpack.
-Supply values to 2 variables to use
-- MODPACK_URL:  from the url to the pack https://www.feed-the-beast.com/projects/{MODPACK_URL}
-- MODPACK_VERSION: version of the modpack to install
+[Mount & Blade Warband](/mount_and_blade/warband/)
 
-##### FTB Revelation
-[FTB Revelation](https://www.feed-the-beast.com/projects/ftb-revelation)
+[OpenTTD](/openttd/)
 
-#### Tekkit Packs
-##### Hexxit 
-[Hexxit](https://www.technicpack.net/modpack/hexxit.552552)
-##### Blightfall 
-[Blightfall](https://www.technicpack.net/modpack/blightfall.592618)
-##### Tekkit-Legends 
-[Tekkit Legends](https://www.technicpack.net/modpack/tekkit-legends.735902)
+[steamcmd servers](/steamcmd_servers/)  These eggs use steamcmd to install  
+* [7 Days to Die](/steamcmd_servers/7_days_to_die/)  
+* [ARK Survival Evolved](/steamcmd_servers/ark_survival_evolved/)
+* [HLDS server](/steamcmd_servers/hlds_server)
+* [PixARK](/steamcmd_servers/pixark/)  
+* [Rust Staging Branch](/steamcmd_servers/rust_staging/)
+* [Starbound](/steamcmd_servers/starbound)
+* [Sven Co-op](/steamcmd_servers/svencoop)
+* [Mordhau](/steamcmd_servers/mordhau)
 
-### Minecraft PE
-#### Nukkit
-The [Nukkit](https://nukkit.io/) Minecraft PE server
+[Squad](/squad/)  
 
-#### PocketmineMP
-The [Pocketmine MP](https://pmmp.io/) Minecraft PE server
+[Unreal Engine](/unreal_engine)
+* [Tower Unite](/unreal_engine/tower_unite/)
 
-### PixARK
-#### PixARK
-The [PixARK](https://store.steampowered.com/app/593600/PixARK/) dedicated server  
-More info at [gamepedia](https://pixark.gamepedia.com/Pixark)
-- As a note this uses the new wine-source image and may not perform up to standard
+[Terraria](/terraria/)  
+* [tmodloader](/terraria/tmodloader)  
+* [tshock](/terraria/tshock/)  
 
-### Squad
-#### Squad Dedicated
-The [Squad](https://joinsquad.com/) official dedicated server
+[Unturned](/unturned/)  
+* [RocketMod](/unturned/rocketmod/)  
 
-### Xonotic
-#### xonotic
-The [xonotic](http://www.xonotic.org/) official dedicated server.
-- Disk space needs to be at least 1 gig for the full package.
-
-## Bot Eggs
-### Discord
-
-#### ATLBot - NodeJS
-The [ATLauncher Bot](https://github.com/ATLauncher/discord-bot/)
-
-#### parkertron - Golang (custom image)
-My own chat bot [parkertron](https://github.com/parkervcp/parkertron)
- - Currently runs as the SupportBot in the pterodactyl discord server.
- - Requires you to set up the yaml fils before it can start properly.
-
-#### pixel-bot - Python
-[pixel-bot](https://github.com/Ispira/pixel-bot)
- - More of a reason/way to test a python container.
-
-#### Sinusbot
-TS3 and Discord music bot. [sinusbot](https://www.sinusbot.com/)
+[Xonotic](/xonotic/)  
